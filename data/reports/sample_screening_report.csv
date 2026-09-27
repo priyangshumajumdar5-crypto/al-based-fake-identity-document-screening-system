@@ -1,0 +1,2 @@
+screening_id,timestamp,filename,ocr_status,validation_status,validation_overall,db_match,ela_status,ela_mean,ela_max,metadata_status,model_status,model_predicted_label,model_score_genuine,model_score_tampered,risk_level,risk_score,manual_review
+f90d4b74-c1e1-4398-904b-6d32dd6d8af0,2026-09-20T13:35:15.023476Z,passport1.jpg,ok,ok,NOT_FOUND,False,ok,0.07451372593641281,6.0,ok,ok,TAMPERED,0.48141,0.51859,MEDIUM,25.0,True

@@ -1,0 +1,77 @@
+# AI Indian Passport Screening System — .gitignore
+
+# ── Environment ───────────────────────────────────────────────
+.env
+*.env
+
+# ── Database ──────────────────────────────────────────────────
+# Do not ignore the required demo database
+*.db
+!data/database/passport_screening.db
+*.sqlite
+*.sqlite3
+
+# ── Sensitive Data & Uploads ──────────────────────────────────
+data/synthetic/*.png
+data/synthetic/*.jpg
+data/synthetic/*.jpeg
+data/samples/
+uploads/
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# ── Virtual Environments & IDE Temp Artifacts ─────────────────
+venv/
+env/
+.venv/
+.env/
+ENV/
+.virtual_documents/
+anaconda_projects/
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ── EasyOCR Cache ────────────────────────────────────────────
+~/.EasyOCR/
+model/
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Testing ───────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# ── Build ─────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+
+# ── Streamlit ─────────────────────────────────────────────────
+.streamlit/
+
+# ── Large Generated Dataset Files & Checkpoints ────────────────
+data/model_checkpoints/
+data/evaluation_results/
+data/forensics/
+data/tampering_dataset/
+*.pt
+*.pth
+

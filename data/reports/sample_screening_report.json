@@ -1,0 +1,203 @@
+{
+  "screening_id": "f90d4b74-c1e1-4398-904b-6d32dd6d8af0",
+  "timestamp": "2026-09-20T13:35:15.023476Z",
+  "filename": "passport1.jpg",
+  "image_info": {
+    "format": "JPEG",
+    "mode": "RGB",
+    "width": 768,
+    "height": 540,
+    "size_bytes": 111386
+  },
+  "ocr": {
+    "status": "ok",
+    "result": {
+      "name": {
+        "value": "PRAVEENKUMAR DODDAPPA NARAD",
+        "confidence": 0.37
+      },
+      "passport_number": {
+        "value": "AALL1624",
+        "confidence": 0.37
+      },
+      "passport_type": {
+        "value": "P",
+        "confidence": 0.37
+      },
+      "country_code": {
+        "value": "IND",
+        "confidence": 0.37
+      },
+      "nationality": {
+        "value": "IND",
+        "confidence": 0.37
+      },
+      "date_of_birth": {
+        "value": "27/07/1993",
+        "confidence": 0.37
+      },
+      "place_of_birth": {
+        "value": "M K HUBBALLI,KARNATAKA",
+        "confidence": 0.37
+      },
+      "date_of_issue": {
+        "value": "27/07/1993",
+        "confidence": 0.37
+      },
+      "place_of_issue": {
+        "value": "77rmar _",
+        "confidence": 0.37
+      },
+      "date_of_expiry": {
+        "value": "07/05/2035",
+        "confidence": 0.37
+      },
+      "sex": {
+        "value": "M",
+        "confidence": 0.37
+      },
+      "mrz_line1": {
+        "value": "P<INDNARAD<<PRAVEENKUMAR<DODDAPPA<<<<<<<<<<<",
+        "confidence": 0.37
+      },
+      "mrz_line2": {
+        "value": "AALL1624<7IND9307274M35050781074981703825<76",
+        "confidence": 0.37
+      }
+    },
+    "error": null
+  },
+  "validation": {
+    "status": "ok",
+    "result": {
+      "passport_number": "AALL1624",
+      "db_match": false,
+      "fuzzy_matched": false,
+      "field_comparisons": [],
+      "summary": {
+        "matched_count": 0,
+        "mismatch_count": 0,
+        "not_verified_count": 0
+      },
+      "overall_status": "NOT_FOUND",
+      "passport_photo_path": null,
+      "message": "No matching record found for passport number 'AALL1624'. Full manual verification required."
+    },
+    "error": null
+  },
+  "ela": {
+    "status": "ok",
+    "result": {
+      "success": true,
+      "mean_ela": 0.07451372593641281,
+      "max_ela": 6.0,
+      "quality_used": 90,
+      "scale_used": 15,
+      "source_format": "JPEG",
+      "converted": false,
+      "save_path": "C:\\Users\\priya\\Desktop\\prototype\\data\\forensics\\ela_output\\passport1_ela_f90d4b74.png",
+      "error": null
+    },
+    "error": null
+  },
+  "metadata": {
+    "status": "ok",
+    "result": {
+      "success": true,
+      "image_info": {
+        "format": "JPEG",
+        "width": 768,
+        "height": 540,
+        "mode": "RGB",
+        "file_size": 111386
+      },
+      "exif_raw": {},
+      "exif_fields": {},
+      "observations": [
+        "No EXIF metadata found. This is normal for PNG files, screenshots, or images that have been re-exported through tools that strip metadata."
+      ],
+      "error": null
+    },
+    "error": null
+  },
+  "model_inference": {
+    "status": "ok",
+    "result": {
+      "success": true,
+      "predicted_class": 1,
+      "predicted_label": "TAMPERED",
+      "score_genuine": 0.48141,
+      "score_tampered": 0.51859,
+      "checkpoint_info": {
+        "epoch": 7,
+        "val_acc": 0.8
+      },
+      "model_config": {
+        "pretrained": true,
+        "freeze_backbone": true,
+        "unfreeze_after": 5,
+        "lr": 0.0001,
+        "batch_size": 16,
+        "epochs": 20,
+        "patience": 5,
+        "weight_decay": 0.0001,
+        "seed": 42,
+        "use_weighted_sampler": true,
+        "input_size": [
+          224,
+          224
+        ],
+        "imagenet_mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "imagenet_std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "num_classes": 2,
+        "device": "cpu",
+        "train_samples": 45,
+        "val_samples": 10
+      },
+      "warnings": [
+        "Scores are raw softmax outputs from the model, not calibrated fraud probabilities. Do not use as a standalone fraud determination. Phase 5 integration will combine this with ELA and metadata signals."
+      ],
+      "errors": []
+    },
+    "error": null,
+    "checkpoint_available": true
+  },
+  "risk_assessment": {
+    "status": "ok",
+    "result": {
+      "risk_level": "MEDIUM",
+      "risk_score": 25.0,
+      "risk_reasons": [
+        "+20pts: Passport number not found in prototype database.",
+        "+5pts: 1 metadata observation(s). Note: Missing metadata alone does NOT indicate tampering."
+      ],
+      "signals_used": [
+        "database_validation",
+        "ela_analysis",
+        "metadata_analysis",
+        "efficientnet_b0_inference"
+      ],
+      "signals_missing": [],
+      "manual_review_recommended": true,
+      "disclaimer": "EXPERIMENTAL PROTOTYPE SCREENING SCORE ONLY. Not a statistically validated fraud probability. A human officer retains full responsibility for the final decision."
+    }
+  },
+  "module_statuses": {
+    "ocr": "ok",
+    "validation": "ok",
+    "ela": "ok",
+    "metadata": "ok",
+    "model_inference": "ok",
+    "risk_assessment": "ok"
+  },
+  "warnings": [],
+  "errors": []
+}
